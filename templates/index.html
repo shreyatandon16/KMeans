@@ -1,0 +1,70 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K Means Clustering for NIFTY50</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+        body {
+            background-color: #f5f5f5;
+            color: #000000;
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 20px;
+            text-align: justify;
+        }
+        h1, h2 {
+            color: #494949;
+        }
+        .content {
+            color: #333333;
+        }
+        .glass-container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+        .graph-container {
+            margin-top: 30px;  /* Reduced margin */
+            width: 100%;
+            padding: 10px;  /* Reduced padding */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glass-container">
+            <h1>K Means Clustering for NIFTY50</h1>
+            <p class="content">
+                NIFTY 50 is a prominent stock market index that represents the 50 largest publicly traded companies in India. This index provides a comprehensive overview of the market performance and trends. The data for NIFTY 50 is a prime example of time series data, consisting of data points collected or recorded at specific intervals over time, which allows for the analysis of trends and patterns.
+            </p>
+            <p class="content">
+                K-Means clustering, an unsupervised learning algorithm, is a powerful tool for partitioning data into distinct groups or clusters. By applying K-Means clustering to the closing prices of NIFTY 50, we can identify significant patterns within the market. This clustering technique helps in determining support and resistance levels, which are key price points where a stock tends to reverse direction. Support levels indicate where a price tends to find a floor and bounce back up, while resistance levels indicate where a price tends to hit a ceiling and fall back down. Understanding these levels is crucial for making informed trading decisions and predicting future price movements.
+            </p>
+        </div>
+        <div class="graph-container">
+            <h2>Elbow Method and Silhouette Score For Optimal k</h2>
+            {{ graph1 | safe }}
+        </div>
+        <div class="graph-container">
+            <h2>Cluster Visualization with Support and Resistance</h2>
+            {{ graph2 | safe }}
+        </div>
+    </div>
+</body>
+</html>
